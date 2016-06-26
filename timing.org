@@ -38,7 +38,6 @@
    w      Number of times that the program was context-switched voluntarily, for instance while waiting for an I/O operation to complete.
 
 
-
 ** Method 1b - timeit
    Here we use the Python builtin timeit instead to measure performance.
 
@@ -1029,23 +1028,19 @@ Line #    Mem usage    Increment   Line Contents
    257   12.051 MiB    0.000 MiB           elif self.player_hand == self.bank_hand:
    258   12.051 MiB    0.000 MiB               self.winner = None
 
-
-
-CYTHON:
- cp game.py game.pyx
+** Other Interpreters
+*** CYTHON:
+ cp file.py file.pyx
  pip install cython
  modify setup.py
  python setup.py build_ext --inplace
- creates baccarat.so
- 
- 
-PYPY:
-pypy game.py 10000
+ creates baccarat.so which is importable normally
+ from baccarat import method
 
+*** PYPY:
+    install and run
+    pypy game.py 10000
 
-
-Queue multi-threaded version.
-
-
-Multiprocessing version.
-
+*** Pyston
+    install and run
+    pyston game.py 10000
