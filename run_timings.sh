@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=../pyston_env/bin:../pypy-c-jit-85210-d8cafae12463-linux64/bin/:$PATH
+
 RESULT_DIR='timings'
 TIME_OUT='baccarat_time.csv'
 TIMEDIFF_OUT='baccarat_timediff.csv'
@@ -16,6 +18,7 @@ PROCS_OUT='baccarat_procs.csv'
 rm -v $RESULT_DIR/cpython27
 rm -v $RESULT_DIR/pypy
 rm -v $RESULT_DIR/pyston
+rm -v $RESULT_DIR/cython
 
 echo '[+] Copying pyx files'
 for i in `seq 3`
