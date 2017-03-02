@@ -56,3 +56,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# artifacts of cython build stuff.
+baccarat/baccarat_ext*.c
+baccarat/baccarat_ext*.pyx
+
